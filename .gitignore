@@ -12,3 +12,6 @@ curso.meta.json
 
 # Entorno local
 infra/.env
+
+# Material interno del cliente (pliego original), no se publica
+Formacion Doors*.docx

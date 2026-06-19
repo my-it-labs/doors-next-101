@@ -138,5 +138,13 @@ terminal abierta** mientras trabajas. Abre `https://localhost:9443/rm`.
   reintenta en un momento.
 - **El login no avanza / redirige raro**: estás entrando por la URL `*.app.github.dev`
   en vez de por `localhost`. Usa el reenvío de puerto.
+- **"No está autorizado" al crear un módulo/artefacto, o falta la licencia de autor**:
+  si ya habías levantado una versión anterior de la imagen, los datos quedaron en el
+  volumen y no se actualizan solos. Bórralo y vuelve a arrancar para que se siembre de
+  nuevo desde la imagen:
+  ```bash
+  docker compose -f infra/docker-compose.yml down -v
+  docker compose -f infra/docker-compose.yml up -d
+  ```
 - La imagen lleva una **licencia de evaluación** de IBM (60 días). Es material de
   formación, no para uso productivo.
