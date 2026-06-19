@@ -1,6 +1,6 @@
 # M05 — Trazabilidad operativa
 
-[← Página anterior](../M04-creacion-mantenimiento/README.md) · [Siguiente página →](../M06-control-cambios/README.md)
+[← Página anterior](../M04-creacion-mantenimiento/M04-02-atributos-estados.md) · [Siguiente página →](../M06-control-cambios/README.md)
 
 La trazabilidad conecta requisitos entre sí (y con diseño y pruebas) mediante
 **enlaces tipados**. Sobre esos enlaces se construyen las **vistas/matrices de
