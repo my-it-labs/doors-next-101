@@ -1,0 +1,32 @@
+# DOORS Next + Mailpit a partir de la imagen publicada (repo privado en Docker Hub).
+#
+# Requiere login previo en Docker Hub (ver infra/README.md y infra/up.sh):
+#   echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USER" --password-stdin
+#
+# Accesos (tras reenviar el puerto a localhost):
+#   DOORS Next:  https://localhost:9443/rm   (alumno / alumno)
+#   Mailpit:     http://localhost:8025
+services:
+  doors:
+    image: ${DOORS_IMAGE:-davidpestana/elx-lab:exp-2026-08}
+    container_name: doors-next
+    pull_policy: always
+    ports:
+      - "9443:9443"   # HTTPS - DOORS Next /rm, admin /jts
+      - "9080:9080"   # HTTP
+    mem_limit: 6g       # heap fijo 4G + overhead
+    shm_size: 1g
+    volumes:
+      - doors-conf:/opt/IBM/JazzTeamServer/server/conf
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: doors-mailpit
+    ports:
+      - "8025:8025"   # bandeja web
+      - "1025:1025"   # SMTP
+    restart: unless-stopped
+
+volumes:
+  doors-conf:
