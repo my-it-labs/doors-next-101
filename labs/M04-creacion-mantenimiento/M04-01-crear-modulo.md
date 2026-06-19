@@ -185,6 +185,11 @@ bajo cada uno, un requisito **indentado**:
 3.1     El carrito permite añadir y quitar productos antes de pagar
 ```
 
+Así se ve una jerarquía numerada real dentro del editor de módulo —fíjate en la
+columna **ID** (estable) frente a la **numeración** `1 / 1.1 / 1.1.1` (calculada):
+
+![Módulo con jerarquía numerada e IDs en el editor](../img/modulo-jerarquia.png)
+
 ## Comprueba
 
 - [ ] El módulo aparece en la pestaña **Módulos**.
