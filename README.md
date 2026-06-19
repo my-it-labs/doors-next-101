@@ -22,8 +22,8 @@ En cada módulo encontrarás el índice del bloque y los ejercicios en orden.
 | # | Módulo | Índice |
 |---|--------|--------|
 | M01 | Preparar el entorno | [labs/M01/](labs/M01/README.md) |
-
-*(Ampliar tabla al publicar módulos.)*
+| M02 | Fundamentos de gestión de requisitos | [labs/M02/](labs/M02/README.md) |
+| M03 | DOORS Next: navegación y estructura | [labs/M03/](labs/M03/README.md) |
 
 ## Empieza aquí
 
