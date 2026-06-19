@@ -1,6 +1,6 @@
 # M01 — Preparar el entorno
 
-[← Página anterior](../../README.md) · [Siguiente página →](../M02-fundamentos-requisitos/README.md)
+[← Página anterior](../../README.md) · [Siguiente página →](M01-02-gestionar-permisos.md)
 
 En este módulo levantas tu propio servidor **IBM DOORS Next**, entras a la
 herramienta y preparas **tu proyecto de trabajo**. A partir de aquí trabajarás
@@ -14,6 +14,7 @@ Elige **una** de las dos opciones de arranque. En ambas accederás por
 - Arrancar DOORS Next + Mailpit con Docker Compose.
 - Acceder a la interfaz web e iniciar sesión.
 - Crear tu propia área de proyecto y dejarla lista para trabajar.
+- Concederte permiso de **autoría** para poder crear módulos y artefactos.
 
 ---
 
@@ -119,10 +120,17 @@ Selecciona una plantilla y confirma con **Finalizar**:
   creas el contenido).
 - Las que terminan en *Sample* añaden además **contenido de ejemplo** para explorar.
 
-Tras aplicarla, el panel del proyecto muestra su contenido y ya puedes crear
-módulos y artefactos.
+Tras aplicarla, el panel del proyecto muestra su contenido.
 
 ![Panel del proyecto tras aplicar la plantilla](../img/plantilla-aplicada.png)
+
+### 3. Date permiso de autoría
+
+Aunque eres administrador del área, un proyecto recién creado **todavía no te deja crear
+artefactos**: hay que concederte el permiso **una vez**. Lo haces, paso a paso, en el
+siguiente lab.
+
+→ **[M01-02 · Gestionar permisos](M01-02-gestionar-permisos.md)**
 
 ---
 

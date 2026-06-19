@@ -94,8 +94,9 @@ Al terminar tendrás un documento de requisitos navegable y numerado.
 | **Abrir artefacto** | Marcado: se abrirá al crearlo. |
 
 > [!WARNING]
-> Si vieras **"No está autorizado para crear…"**, estás en un proyecto del que no eres
-> autor. En **tu** proyecto no aparece. *(El aviso de la captura es de un proyecto ajeno.)*
+> Si **Aceptar** sale en gris y ves **"No está autorizado para crear…"**, tu usuario aún no
+> tiene permiso de autoría en el proyecto. Se resuelve una sola vez en
+> [M01 · Gestionar permisos](../M01-preparar-entorno/M01-02-gestionar-permisos.md).
 
 ---
 
@@ -107,6 +108,11 @@ marcado y pulsa **Aceptar**.
 **Qué pasa** — el diálogo se cierra y, tras unos segundos, se abre el **editor del
 módulo** (vacío), con la ruta y el nombre en la cabecera.
 
+![Editor del módulo recién creado, todavía vacío](../img/modulo-vacio.png)
+
+**Qué ves** — un módulo vacío que te ofrece **➕ Añadir artefacto existente** o
+**◇ Crear nuevo artefacto**. Vas a crear contenido nuevo.
+
 > [!NOTE]
 > **Por qué** — "SRS" (*Software Requirements Specification*) es el nombre habitual de
 > un documento de requisitos; nombrarlo bien te ayuda a encontrarlo después.
@@ -115,13 +121,20 @@ módulo** (vacío), con la ruta y el nombre en la cabecera.
 
 ### Paso 5 · Añade el primer encabezado
 
-**Acción** — en el editor, pulsa **Crear** (barra del módulo) para insertar una fila.
-Escribe `Acceso` y confirma con <kbd>Intro</kbd>.
+**Acción** — pulsa **◇ Crear nuevo artefacto** (o el botón **Crear** de la barra del
+módulo). Aparece una **fila en edición**: escribe `Acceso`.
 
-![Editor de módulo: jerarquía numerada, IDs y barra de herramientas](../img/modulo-editor.png)
+![Primera fila en edición, con selector de tipo Heading y barra de texto](../img/fila-edicion.png)
 
-**Qué ves** — una fila con un **ID** propio en la columna **ID** y tu texto en
-**Contenido**. Al ser la primera de primer nivel, su número es **1**.
+**Qué ves** — una fila editable con un **selector de tipo** (arriba a la izquierda, p. ej.
+**Heading**), la barra de texto enriquecido y el aviso *"Para guardar la fila, haga clic
+fuera o pulse Ctrl+5"*. Al ser la primera de primer nivel, su número será **1**.
+
+**Acción** — guarda la fila: **haz clic fuera** de ella o pulsa <kbd>Ctrl</kbd>+<kbd>5</kbd>.
+
+> [!TIP]
+> **Opciones** — el selector de tipo te deja elegir **Heading** (encabezado/estructura) o un
+> tipo de **requisito**. Para una sección, usa **Heading**.
 
 > [!NOTE]
 > **Por qué** — separar **estructura** (encabezados) de **contenido** (requisitos) es
@@ -131,11 +144,12 @@ Escribe `Acceso` y confirma con <kbd>Intro</kbd>.
 
 ### Paso 6 · Añade un requisito
 
-**Acción** — con "Acceso" seleccionado, pulsa **Crear** otra vez y escribe:
+**Acción** — pulsa **Crear** otra vez para añadir una segunda fila. En el **selector de
+tipo** elige un tipo de **requisito** (p. ej. *Software Requirement*) y escribe:
 
 > `El sistema permite iniciar sesión con usuario y contraseña`
 
-Confirma con <kbd>Intro</kbd>.
+Guárdala (**clic fuera** o <kbd>Ctrl</kbd>+<kbd>5</kbd>).
 
 **Qué ves** — una segunda fila, de momento **al mismo nivel** que "Acceso"
 (numerada **2**). Falta meterla dentro de la sección 👇.
