@@ -68,11 +68,11 @@ define. Cambiar el tipo cambia los atributos disponibles.
 
 ### Paso 3 — Muestra un atributo como columna
 
-**Acción:** en la tabla del módulo, abre la **configuración de columnas** (el icono
-de columnas en la cabecera de la tabla, junto a **ID/Contenido**) y **añade** una
-columna para un atributo de la plantilla, por ejemplo **Prioridad** o **Estado**.
+**Acción:** abre el menú **Más acciones** (icono ▤ arriba a la derecha del módulo) y
+elige **Configurar las columnas a visualizar…**. Añade una columna para un atributo
+de la plantilla, por ejemplo **Prioridad** o **Estado**.
 
-![Cabecera de la tabla del módulo con sus columnas](../img/modulo-editor.png)
+![Menú Más acciones del módulo con la opción de configurar columnas](../img/modulo-mas-acciones.png)
 
 **Qué ves:** aparece una columna nueva con el valor del atributo en cada fila (vacío
 al principio).
