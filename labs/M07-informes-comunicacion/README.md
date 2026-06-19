@@ -1,137 +1,144 @@
-# M07 — Informes y comunicación
+# M07 · Informes y comunicación
 
 [← Página anterior](../M06-control-cambios/README.md) · [Volver al índice →](../../README.md)
 
-El último paso es **comunicar** los requisitos fuera de la herramienta: exportarlos
-a Word, CSV o PDF y prepararlos para una presentación a las partes interesadas.
+El último paso es **comunicar** los requisitos fuera de la herramienta: exportarlos a Word,
+CSV o PDF y prepararlos para una presentación a las partes interesadas.
 
 ## Qué aprenderás
 
-- Exportar un módulo o una vista a Word, CSV o PDF.
-- Preparar una vista pensada para el informe o la presentación.
+- **Exportar** un módulo o una vista a Word, CSV o PDF.
+- Preparar una **vista** pensada para el informe o la presentación.
 
-## Tabla de ejercicios
+## Ejercicios de este módulo
 
-- M07-01 — Exportar a Word/CSV/PDF
-- M07-02 — Vistas para informes y stakeholders
+| Lab | Título |
+|-----|--------|
+| M07-01 | Exportar a Word/CSV/PDF |
+| M07-02 | Vistas para informes y stakeholders |
 
 ---
 
-## M07-01 — Exportar a Word/CSV/PDF
+## M07-01 · Exportar a Word/CSV/PDF
 
-### Objetivos
+> [!NOTE]
+> **Objetivo** — exportar un módulo a un formato de oficina y **elegir el formato** según el destinatario.
 
-- Exportar un módulo a un formato de oficina.
-- Elegir el formato según el destinatario.
+### Conceptos clave
 
-### Conceptos
+| Formato | Para qué |
+|---|---|
+| **Word** | Documento de requisitos formal (lectura/firma). |
+| **CSV** | Hoja de cálculo para análisis y cruces. |
+| **PDF** | Lectura/archivo/firma. |
+| **ReqIF** | Intercambio entre herramientas de requisitos. |
 
-- DOORS Next exporta el contenido a **Word** (documento de requisitos), **CSV**
-  (hoja de cálculo para análisis) y **PDF** (lectura/firma).
-- La exportación respeta la **vista activa**: columnas, orden y filtros condicionan
-  lo que sale.
-- Para intercambio entre herramientas de requisitos existe además **ReqIF**.
+> [!IMPORTANT]
+> La exportación respeta la **vista activa**: columnas, orden y filtros condicionan lo que sale.
+> *"Lo que ves es lo que exportas."*
 
 ### En DOORS Next
 
-Desde el menú del módulo, la opción **Exportar** permite elegir el formato. Lo que se
-exporta es el contenido **tal como se ve** en ese momento, por lo que conviene fijar
-antes la vista adecuada.
+Desde el menú **Más acciones** del módulo eliges la salida: **Crear e imprimir documento de
+Microsoft Word…**, **…PDF…** o **Generar informe para la vista…**.
+
+![Menú Más acciones del módulo con las opciones de exportar e informar](../img/modulo-mas-acciones.png)
 
 ### Laboratorio
 
-**Objetivo:** exportar tu módulo a Word y a CSV.
+**Acción** — aplica una vista con las columnas que quieras en el informe.
 
-**En qué consiste:** sobre el módulo de M04, genera dos exportaciones.
+> [!NOTE]
+> **Por qué** — la exportación toma **columnas, orden y filtros** de la vista activa.
+> **Resultado esperado:** la tabla muestra solo lo que debe salir.
 
-- **Acción:** aplica una vista con las columnas que quieras en el informe.
-  **Por qué:** la exportación toma columnas, orden y filtros de la vista activa.
-  **Resultado esperado:** la tabla muestra solo lo que debe salir.
-- **Acción:** usa **Exportar → Word** y luego **Exportar → CSV**.
-  **Por qué:** Word sirve para el documento formal; CSV para análisis en hoja de
-  cálculo.
-  **Resultado esperado:** se descargan los ficheros con el contenido de la vista.
+**Acción** — usa **Exportar → Word** y luego **Exportar → CSV**.
 
-### Conclusiones
+> [!NOTE]
+> **Por qué** — Word para el documento formal; CSV para análisis en hoja de cálculo.
+> **Resultado esperado:** se descargan los ficheros con el contenido de la vista.
 
-- "Lo que ves es lo que exportas": la vista activa manda.
-- El formato se elige por destinatario: Word (lectura formal), CSV (análisis), PDF
-  (firma/archivo).
+## ✅ Conclusiones
 
-### Comprueba
+- *"Lo que ves es lo que exportas"*: la **vista activa** manda.
+- El formato se elige por destinatario: **Word** (lectura formal), **CSV** (análisis), **PDF** (firma/archivo).
 
-- Si exportas con un filtro activo, ¿salen también los requisitos filtrados (ocultos)?
+## Comprueba
 
-### Reto
+- [ ] Sabes responder: si exportas con un filtro activo, ¿salen los requisitos filtrados (ocultos)? *(no)*
+
+## 🏆 Reto
 
 Indica qué formato elegirías para que un analista cruce los requisitos con una hoja de
 prioridades y por qué.
 
 <details>
-<summary>Solución</summary>
+<summary>Ver solución</summary>
 
-**CSV**: se abre en una hoja de cálculo y permite ordenar, filtrar y cruzar los
-atributos (p. ej. Prioridad) con otras tablas.
+<br>
+
+**CSV**: se abre en una hoja de cálculo y permite ordenar, filtrar y cruzar los atributos
+(p. ej. *Prioridad*) con otras tablas.
+
 </details>
 
 ---
 
-## M07-02 — Vistas para informes y stakeholders
+## M07-02 · Vistas para informes y stakeholders
 
-### Objetivos
+> [!NOTE]
+> **Objetivo** — diseñar una vista orientada a **comunicar** y adaptar el detalle al público.
 
-- Diseñar una vista orientada a comunicar.
-- Adaptar el nivel de detalle al público.
+### Conceptos clave
 
-### Conceptos
-
-- Una buena vista de informe muestra **lo justo**: las columnas relevantes (ID,
-  Nombre, Estado, Prioridad) y un orden claro.
-- Para **stakeholders** suele bastar el **esquema** (encabezados y requisitos
-  aprobados); el detalle técnico se reserva para el equipo.
-- Guardar la vista permite **repetir** el informe sin rehacer el filtrado.
+| Idea | Qué implica |
+|---|---|
+| **Mostrar lo justo** | Columnas relevantes (ID, Nombre, Estado, Prioridad) y orden claro. |
+| **Público stakeholder** | Suele bastar el **esquema** (encabezados y aprobados); el detalle técnico, para el equipo. |
+| **Vista guardada** | Permite **repetir** el informe sin rehacer el filtrado. |
 
 ### En DOORS Next
 
-El panel **Vistas** guarda configuraciones reutilizables. Cambiar de vista no altera
-los datos; solo prepara la presentación antes de exportar o de revisar con el cliente.
+El panel **Vistas** guarda configuraciones reutilizables. Cambiar de vista **no altera los
+datos**; solo prepara la presentación antes de exportar o revisar con el cliente.
 
 ![Módulo con una vista aplicada](../img/modulo-vista.png)
 
 ### Laboratorio
 
-**Objetivo:** crear y guardar una vista de informe.
+**Acción** — crea una vista con columnas **ID, Nombre, Estado, Prioridad** y filtra por *Estado = Aprobado*.
 
-**En qué consiste:** prepara una vista pensada para una reunión con el cliente.
+> [!NOTE]
+> **Por qué** — el cliente quiere ver lo **aprobado**, no el trabajo en curso.
+> **Resultado esperado:** la tabla muestra solo requisitos aprobados con esas columnas.
 
-- **Acción:** crea una vista con columnas **ID, Nombre, Estado, Prioridad** y filtra
-  por *Estado = Aprobado*.
-  **Por qué:** el cliente quiere ver lo aprobado, no el trabajo en curso.
-  **Resultado esperado:** la tabla muestra solo requisitos aprobados con esas
-  columnas.
-- **Acción:** guarda la vista con un nombre (p. ej. "Informe cliente").
-  **Por qué:** poder repetir el informe sin reconfigurar.
-  **Resultado esperado:** la vista aparece en el panel **Vistas** para reutilizarla.
+**Acción** — guarda la vista con un nombre (p. ej. `Informe cliente`).
 
-### Conclusiones
+> [!NOTE]
+> **Por qué** — poder **repetir** el informe sin reconfigurar.
+> **Resultado esperado:** la vista aparece en el panel **Vistas** para reutilizarla.
 
-- Comunicar requisitos es, sobre todo, **elegir la vista**: público, columnas y
-  filtros.
-- Una vista guardada convierte un informe en algo repetible.
+## ✅ Conclusiones
 
-### Comprueba
+- Comunicar requisitos es, sobre todo, **elegir la vista**: público, columnas y filtros.
+- Una vista guardada convierte un informe en algo **repetible**.
 
-- ¿Por qué conviene guardar la vista del informe en lugar de reconfigurarla cada vez?
+## Comprueba
 
-### Reto
+- [ ] Sabes por qué conviene **guardar** la vista del informe en lugar de reconfigurarla cada vez.
 
-Describe la vista que prepararías para una **auditoría** (frente a la de una reunión
-comercial) y en qué se diferencian.
+## 🏆 Reto
+
+Describe la vista que prepararías para una **auditoría** (frente a la de una reunión comercial)
+y en qué se diferencian.
 
 <details>
-<summary>Solución</summary>
+<summary>Ver solución</summary>
 
-Para auditoría: columnas con **Estado, autor, fechas y enlaces/cobertura**, sin
-filtrar (se quiere ver todo y su trazabilidad). Para una reunión comercial: vista de
-esquema, solo **aprobados**, con lenguaje de negocio y sin detalle técnico.
+<br>
+
+Para **auditoría**: columnas con **Estado, autor, fechas y enlaces/cobertura**, sin filtrar (se
+quiere ver todo y su trazabilidad). Para **reunión comercial**: vista de esquema, solo
+**aprobados**, con lenguaje de negocio y sin detalle técnico.
+
 </details>
