@@ -1,6 +1,6 @@
 # M06 — Control de cambios (baselines)
 
-[← Página anterior](../M05/README.md) · [Siguiente página →](../M07/README.md)
+[← Página anterior](../M05-trazabilidad/README.md) · [Siguiente página →](../M07-informes-comunicacion/README.md)
 
 Cuando un conjunto de requisitos llega a un hito (una entrega, una revisión), se
 "congela" con una **línea base** para poder volver a él y compararlo. Este módulo

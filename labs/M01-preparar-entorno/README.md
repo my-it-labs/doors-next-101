@@ -1,6 +1,6 @@
 # M01 — Preparar el entorno
 
-[← Página anterior](../../README.md) · [Siguiente página →](../M02/README.md)
+[← Página anterior](../../README.md) · [Siguiente página →](../M02-fundamentos-requisitos/README.md)
 
 En este módulo levantas tu propio servidor **IBM DOORS Next**, entras a la
 herramienta y preparas **tu proyecto de trabajo**. A partir de aquí trabajarás

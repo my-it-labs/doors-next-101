@@ -1,6 +1,6 @@
 # M02 — Fundamentos de gestión de requisitos
 
-[← Página anterior](../M01/README.md) · [Siguiente página →](../M03/README.md)
+[← Página anterior](../M01-preparar-entorno/README.md) · [Siguiente página →](../M03-navegacion-estructura/README.md)
 
 Antes de manejar la herramienta conviene fijar qué es un requisito, qué lo hace
 bueno y dónde encaja en el ciclo de desarrollo. Después das el primer paso en

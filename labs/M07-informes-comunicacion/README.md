@@ -1,6 +1,6 @@
 # M07 — Informes y comunicación
 
-[← Página anterior](../M06/README.md) · [Volver al índice →](../../README.md)
+[← Página anterior](../M06-control-cambios/README.md) · [Volver al índice →](../../README.md)
 
 El último paso es **comunicar** los requisitos fuera de la herramienta: exportarlos
 a Word, CSV o PDF y prepararlos para una presentación a las partes interesadas.

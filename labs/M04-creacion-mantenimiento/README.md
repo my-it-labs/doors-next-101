@@ -1,6 +1,6 @@
 # M04 — Creación y mantenimiento de requisitos
 
-[← Página anterior](../M03/README.md) · [Siguiente página →](../M05/README.md)
+[← Página anterior](../M03-navegacion-estructura/README.md) · [Siguiente página →](../M05-trazabilidad/README.md)
 
 Hasta ahora has navegado por contenido existente. En este módulo **creas** tú:
 módulos, secciones y requisitos, con su jerarquía y numeración, y aprendes a

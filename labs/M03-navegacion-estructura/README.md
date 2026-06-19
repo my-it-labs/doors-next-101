@@ -1,6 +1,6 @@
 # M03 — DOORS Next: navegación y estructura
 
-[← Página anterior](../M02/README.md) · [Siguiente página →](../M04/README.md)
+[← Página anterior](../M02-fundamentos-requisitos/README.md) · [Siguiente página →](../M04-creacion-mantenimiento/README.md)
 
 Este módulo es el recorrido operativo por la herramienta: cómo moverte por el
 proyecto, abrir un **módulo** y entender su jerarquía y atributos, y cómo usar
