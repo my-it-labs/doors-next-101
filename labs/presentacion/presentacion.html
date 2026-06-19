@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM DOORS Next · Presentación</title>
+<style>
+  :root{
+    --bg:#0d1b2a; --panel:#13263b; --accent:#1f8fd6; --accent2:#f5a623;
+    --text:#eef4fa; --muted:#9fb3c8; --danger:#e05a4f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}
+  #deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:3.2vh 4vw 2vh;opacity:0;transition:opacity .35s ease}
+  .slide.active{display:flex;opacity:1}
+
+  .kicker{font-size:1.5vw;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .kicker.danger{color:var(--danger)}
+  .kicker.ok{color:var(--accent2)}
+  h1.title{font-size:3.6vw;line-height:1.08;margin:.4vh 0 .2vh;font-weight:800}
+  h1.title small{display:block;font-size:1.7vw;font-weight:500;color:var(--muted);margin-top:1vh}
+  p.lead{font-size:1.7vw;color:var(--muted);max-width:60ch;margin-top:.6vh;line-height:1.4}
+  .figure{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;margin-top:1.5vh}
+  .figure img{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 22px 60px rgba(0,0,0,.55);background:#fff}
+
+  /* Cover slide */
+  .cover{align-items:center;justify-content:center;text-align:center}
+  .cover .figure{flex:0 0 auto;margin:0 0 3vh}
+  .cover .figure img{max-height:34vh}
+  .cover h1{font-size:4.8vw}
+  .cover .tagline{font-size:1.8vw;color:var(--accent);letter-spacing:.04em;margin-top:1.5vh}
+  .cover .meta{font-size:1.3vw;color:var(--muted);margin-top:3vh}
+
+  /* footer */
+  footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
+    padding:.9vh 2vw;font-size:1.1vw;color:var(--muted);background:linear-gradient(transparent,rgba(0,0,0,.35))}
+  .progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);transition:width .35s ease;z-index:20}
+  .pill{background:var(--panel);padding:.3em .8em;border-radius:999px}
+
+  /* speaker notes */
+  #notes{position:fixed;left:0;right:0;bottom:0;max-height:32vh;overflow:auto;background:rgba(5,12,20,.96);
+    border-top:2px solid var(--accent);padding:2vh 4vw;font-size:1.25vw;line-height:1.5;display:none;z-index:30}
+  #notes.show{display:block}
+  #notes h4{color:var(--accent);font-size:1vw;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1vh}
+  #help{position:fixed;top:14px;right:18px;font-size:.85vw;color:var(--muted);background:var(--panel);padding:.5em .9em;border-radius:8px;opacity:.85;z-index:30}
+  @media (max-width:900px){
+    h1.title{font-size:6vw}.kicker{font-size:3vw}p.lead{font-size:3.4vw}
+    footer,#help{font-size:2.6vw}.cover h1{font-size:8vw}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div id="help">← → navegar · F pantalla completa · N notas</div>
+<div id="deck"></div>
+<footer>
+  <span class="pill">IBM DOORS Next · Presentación</span>
+  <span><span id="cur">1</span> / <span id="tot">0</span></span>
+</footer>
+<div id="notes"><h4>Notas del ponente</h4><div id="notes-body"></div></div>
+
+<script>
+const slides = [
+  { img:"01-logo.png", cover:true,
+    title:"IBM DOORS Next",
+    tagline:"Gestión de requisitos de nueva generación",
+    meta:"Presentación · ¿Qué es? · ¿Para qué sirve? · ¿Por qué lo usamos?",
+    notes:"Bienvenida. En 5 minutos vamos a ver POR QUÉ existe esta herramienta antes de tocarla. No vendo software: vendo dejar de sufrir con los requisitos. DOORS = la 'puerta' de entrada al ciclo de vida del producto." },
+
+  { img:"02-didyouknow.png", kicker:"El punto de partida", kclass:"",
+    title:"¿Sabías que…?",
+    lead:"La mayoría de los proyectos que fracasan no lo hacen por la tecnología, sino por una mala gestión de los requisitos.",
+    notes:"Engancha con el dato: requisitos ambiguos, incompletos o cambiantes son la causa nº1 de sobrecostes. Pregunta a la sala: ¿cuántos habéis vivido un proyecto donde 'nadie sabía qué había que construir'?" },
+
+  { img:"03-requisitos-warning.png", kicker:"La consecuencia", kclass:"danger",
+    title:"Project failure",
+    lead:"Requisitos mal gestionados = retrasos, retrabajo, y un producto que no es lo que el cliente pedía.",
+    notes:"Aquí pintamos el dolor. Cada error de requisitos detectado tarde cuesta 10-100x más que si se detecta al inicio." },
+
+  { img:"04-docs-dispersos.png", kicker:"El problema (1/4)", kclass:"danger",
+    title:"Requisitos dispersos",
+    lead:"Word, Excel, correos, PDFs… La información está en silos, duplicada y sin una única fuente de verdad.",
+    notes:"Todos lo hemos hecho: 'requisitos_v3_final_DEFINITIVO.docx'. ¿Qué versión es la buena? ¿Quién cambió esto y por qué?" },
+
+  { img:"05-proyecto-camino.png", kicker:"El problema (2/4)", kclass:"danger",
+    title:"Sin trazabilidad, vas a ciegas",
+    lead:"¿Este requisito de dónde viene? ¿Está cubierto por una prueba? Sin enlaces no puedes responder.",
+    notes:"Sin trazabilidad no sabes el impacto de un cambio ni si has probado todo. Análisis de impacto = imposible." },
+
+  { img:"06-reunion-confusion.png", kicker:"El problema (3/4)", kclass:"danger",
+    title:"Equipos desalineados",
+    lead:"Negocio, desarrollo, calidad y cliente entienden cosas distintas del mismo documento.",
+    notes:"Malentendidos por trabajar sobre copias distintas. Las decisiones se pierden en hilos de correo." },
+
+  { img:"07-herramientas-desconectadas.png", kicker:"El problema (4/4)", kclass:"danger",
+    title:"Herramientas desconectadas",
+    lead:"Cada equipo con su herramienta y sin integración: la información no fluye.",
+    notes:"Silos de herramientas → copiar y pegar manual → errores. Falta una capa que conecte requisitos con diseño, pruebas y cambios." },
+
+  { img:"08-equipos-distribuidos.png", kicker:"Y además…", kclass:"danger",
+    title:"Equipos distribuidos",
+    lead:"Distintas ubicaciones y zonas horarias multiplican la descoordinación.",
+    notes:"El trabajo distribuido/remoto agrava todo lo anterior si no hay una plataforma común." },
+
+  { img:"10-coste.png", kicker:"La factura final", kclass:"danger",
+    title:"¿Cuál es el coste?",
+    lead:"Sobrecostes, plazos incumplidos, riesgo regulatorio y pérdida de confianza del cliente.",
+    notes:"Cierra el bloque de dolor con la pregunta del dinero. Todo esto se paga. Pausa dramática antes de la solución." },
+
+  { img:"10b-use-right-tool.png", kicker:"La idea clave", kclass:"ok",
+    title:"Usa la herramienta adecuada",
+    lead:"Gestionar requisitos con documentos es como clavar un tornillo con un martillo.",
+    notes:"Puente hacia la solución: el problema no es la gente, es la herramienta. Necesitamos algo diseñado para esto." },
+
+  { img:"11-solucion-doors.png", kicker:"La solución", kclass:"ok",
+    title:"IBM DOORS Next",
+    lead:"Una plataforma única para definir, gestionar, enlazar y colaborar sobre los requisitos durante todo el ciclo de vida.",
+    notes:"Aquí entra el producto. DOORS Next (Rational) = gestión de requisitos de nueva generación, web, colaborativa y trazable. Ahora los beneficios." },
+
+  { img:"14-equipo-conectado.png", kicker:"Beneficio 1", kclass:"ok",
+    title:"Una única fuente de verdad",
+    lead:"Todos trabajan sobre los mismos requisitos, en tiempo real y desde el navegador.",
+    notes:"Fin de las copias. Comentarios, revisiones y aprobaciones dentro de la herramienta. Colaboración real." },
+
+  { img:"13-necesidades-negocio.png", kicker:"Beneficio 2", kclass:"ok",
+    title:"De la necesidad al requisito",
+    lead:"Captura la necesidad de negocio y desglósala en requisitos estructurados y gestionables.",
+    notes:"Conecta el 'qué quiere el cliente' con el 'qué vamos a construir'. Tipos de artefacto, atributos, módulos." },
+
+  { img:"12-trazabilidad-triangulo.png", kicker:"Beneficio 3", kclass:"ok",
+    title:"Trazabilidad extremo a extremo",
+    lead:"Del requisito de negocio al diseño, las pruebas y los cambios: todo enlazado.",
+    notes:"El corazón del valor. Análisis de impacto en segundos: si cambio esto, ¿a qué afecta y qué pruebas repito?" },
+
+  { img:"15-trazabilidad-arbol.png", kicker:"Beneficio 3", kclass:"ok",
+    title:"Enlaces entre artefactos",
+    lead:"Relaciones explícitas que muestran cobertura, dependencias y huecos.",
+    notes:"Matrices y vistas de trazabilidad. Demuestra cobertura (¿todo requisito tiene prueba?) de un vistazo." },
+
+  { img:"17-edicion-versionado.png", kicker:"Beneficio 4", kclass:"ok",
+    title:"Edición colaborativa y versionado",
+    lead:"Histórico de cambios, versiones y líneas base automáticas. Quién, qué y cuándo.",
+    notes:"Auditoría y control de cambios sin esfuerzo. Líneas base para congelar el alcance de una entrega." },
+
+  { img:"16-dashboards.png", kicker:"Beneficio 5", kclass:"ok",
+    title:"Dashboards e informes en vivo",
+    lead:"Métricas y estado del proyecto siempre actualizados, sin montar Excels a mano.",
+    notes:"Visibilidad para gestión: estado, progreso, calidad de requisitos. Decisiones basadas en datos." },
+
+  { img:"18-bombilla.png", cover:true, kclass:"ok",
+    title:"¿Por qué lo usamos?",
+    tagline:"Menos riesgo · Mejor calidad · Decisiones con datos",
+    meta:"DOORS Next convierte el caos de los requisitos en un proceso controlado, trazable y colaborativo.",
+    notes:"Cierre. Resumen en una frase: gestionamos requisitos como un activo, no como documentos sueltos. Transición: 'y ahora vamos a verlo en directo'." },
+];
+
+const deck = document.getElementById('deck');
+slides.forEach((s,i)=>{
+  const el = document.createElement('section');
+  el.className = 'slide' + (s.cover ? ' cover' : '');
+  if(s.cover){
+    el.innerHTML = `
+      <div class="figure"><img src="slides-img/${s.img}" alt=""></div>
+      <h1 class="title">${s.title}</h1>
+      ${s.tagline?`<div class="tagline">${s.tagline}</div>`:''}
+      ${s.meta?`<div class="meta">${s.meta}</div>`:''}`;
+  } else {
+    el.innerHTML = `
+      ${s.kicker?`<div class="kicker ${s.kclass||''}">${s.kicker}</div>`:''}
+      <h1 class="title">${s.title}</h1>
+      ${s.lead?`<p class="lead">${s.lead}</p>`:''}
+      <div class="figure"><img src="slides-img/${s.img}" alt=""></div>`;
+  }
+  deck.appendChild(el);
+});
+
+let idx = 0;
+const els = document.querySelectorAll('.slide');
+document.getElementById('tot').textContent = slides.length;
+const notesBox = document.getElementById('notes');
+const notesBody = document.getElementById('notes-body');
+
+function render(){
+  els.forEach((e,i)=>e.classList.toggle('active', i===idx));
+  document.getElementById('cur').textContent = idx+1;
+  document.getElementById('progress').style.width = ((idx+1)/slides.length*100)+'%';
+  notesBody.textContent = slides[idx].notes || '';
+}
+function next(){ if(idx<slides.length-1){idx++;render();} }
+function prev(){ if(idx>0){idx--;render();} }
+
+document.addEventListener('keydown', e=>{
+  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next();}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev();}
+  else if(e.key==='Home'){idx=0;render();}
+  else if(e.key==='End'){idx=slides.length-1;render();}
+  else if(e.key.toLowerCase()==='f'){ if(!document.fullscreenElement)document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+  else if(e.key.toLowerCase()==='n'){ notesBox.classList.toggle('show'); }
+});
+document.addEventListener('click', e=>{ if(e.clientX > window.innerWidth*0.35) next(); else prev(); });
+render();
+</script>
+</body>
+</html>
