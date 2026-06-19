@@ -2,64 +2,85 @@
 
 [← Página anterior](../../README.md) · [Siguiente página →](../M02/README.md)
 
-En este módulo levantas tu propio servidor **IBM DOORS Next** en un Codespace y
-entras a la herramienta. A partir de aquí trabajarás siempre contra este entorno.
+En este módulo levantas tu propio servidor **IBM DOORS Next** y entras a la
+herramienta. A partir de aquí trabajarás siempre contra este entorno.
+
+Elige **una** de las dos opciones. En ambas accederás por `https://localhost:9443/rm`.
 
 ## Qué aprenderás
 
-- Abrir el laboratorio en GitHub Codespaces.
 - Arrancar DOORS Next + Mailpit con Docker Compose.
-- Acceder a la interfaz web de DOORS Next y validar el entorno.
+- Acceder a la interfaz web y validar el entorno.
 
-## Antes de empezar
+---
 
-Necesitas los dos secretos que entrega el formador, configurados en
-**GitHub → Settings → Codespaces → Secrets** con acceso a este repositorio:
+## Opción A — Docker en tu equipo
 
-- `DOCKERHUB_USER`
-- `DOCKERHUB_TOKEN`
+Necesitas **Docker** (Docker Desktop en Windows/macOS, Docker Engine en Linux),
+~6-8 GB de RAM libres y el **usuario + token de Docker Hub** del formador.
 
-Detalle completo del entorno en [infra/README.md](../../infra/README.md).
-
-## Pasos
-
-1. **Haz fork** de este repositorio en tu cuenta de GitHub.
-
-2. **Abre un Codespace** sobre tu fork (botón *Code → Codespaces → Create*).
-   Usa una máquina de **4 núcleos / 16 GB**.
-
-3. **Arranca el stack** desde la terminal del Codespace:
-
+1. Clona el repositorio y entra:
    ```bash
-   bash infra/up.sh
+   git clone https://github.com/my-it-labs/doors-next-101.git
+   cd doors-next-101
    ```
-
-   La primera vez descarga varios GB; ten paciencia.
-
-4. **Espera al arranque completo** (varios minutos). Sigue el log hasta ver
-   `La aplicación rm se ha iniciado`:
-
+2. Login en Docker Hub (la contraseña es el **token** del formador):
+   ```bash
+   docker login -u <USUARIO_DOCKERHUB>
+   ```
+3. Arranca:
+   ```bash
+   docker compose -f infra/docker-compose.yml up -d
+   ```
+4. Espera ~3-4 min (sigue el log hasta `Application rm started`):
    ```bash
    docker compose -f infra/docker-compose.yml logs -f doors
    ```
+5. Abre `https://localhost:9443/rm`. **No necesitas reenvío de puerto.**
 
-5. **Reenvía el puerto 9443 a tu equipo** y abre DOORS Next por `localhost`:
+---
 
-   - Con el **cliente VS Code de escritorio**, el panel *Ports* reenvía 9443
-     automáticamente, o
-   - con GitHub CLI: `gh codespace ports forward 9443:9443 8025:8025`
+## Opción B — GitHub Codespaces
 
-   > Accede por `https://localhost:9443/rm`, **no** por la URL `*.app.github.dev`
-   > del navegador (el inicio de sesión solo funciona vía `localhost`).
+Necesitas los secretos `DOCKERHUB_USER` y `DOCKERHUB_TOKEN` ya configurados en
+**Settings → Codespaces → Secrets** (los da el formador), y reenviar el puerto a
+tu equipo con **VS Code de escritorio** o **`gh`**.
 
-6. **Inicia sesión** en `https://localhost:9443/rm` con `alumno` / `alumno`.
-   Acepta el aviso de certificado autofirmado.
+1. Haz **fork** de este repositorio.
+2. **Code → Codespaces → Create codespace** (máquina **4 núcleos / 16 GB**).
+3. En la terminal del Codespace:
+   ```bash
+   bash infra/up.sh
+   ```
+4. Espera ~3-4 min:
+   ```bash
+   docker compose -f infra/docker-compose.yml logs -f doors
+   ```
+5. **Reenvía el puerto 9443 a tu equipo** y abre `https://localhost:9443/rm`.
+   El cómo, según tu sistema operativo, está detallado en
+   [infra/README.md](../../infra/README.md#reenvío-de-puerto-opción-b--según-tu-sistema).
+   En resumen:
+   - **VS Code de escritorio**: *Open in VS Code Desktop* → reenvía el 9443 solo.
+   - **GitHub CLI**: `gh codespace ports forward 9443:9443 8025:8025` (deja la
+     terminal abierta).
+
+   > **No** abras la URL `*.app.github.dev`: por ahí el inicio de sesión no funciona.
+
+---
+
+## Iniciar sesión
+
+En `https://localhost:9443/rm`, acepta el aviso de **certificado autofirmado** e
+inicia sesión con:
+
+- Usuario: `alumno`
+- Contraseña: `alumno`
 
 ## Antes de seguir
 
-- Comprueba que ves la página de proyectos de DOORS Next con el usuario `alumno`.
-- Abre la bandeja de correo de Mailpit en `http://localhost:8025` (puerto 8025
-  reenviado) y confirma que carga.
+- Confirma que ves la página de proyectos de DOORS Next con el usuario `alumno`.
+- Abre Mailpit en `http://localhost:8025` (en Codespaces, con el 8025 también
+  reenviado) y comprueba que carga.
 
-**Reto:** localiza en la administración de DOORS Next (`/jts/admin`) en qué fecha
-caduca la licencia de evaluación del servidor.
+**Reto:** localiza en la administración (`/jts/admin`) la fecha de caducidad de la
+licencia de evaluación del servidor.

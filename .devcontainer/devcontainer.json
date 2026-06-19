@@ -10,12 +10,11 @@
     "memory": "16gb",
     "storage": "32gb"
   },
-  "forwardPorts": [9443, 9080, 8025, 8443],
+  "forwardPorts": [9443, 9080, 8025],
   "portsAttributes": {
     "9443": { "label": "DOORS Next (HTTPS)", "protocol": "https", "onAutoForward": "silent" },
     "9080": { "label": "DOORS Next (HTTP)", "onAutoForward": "silent" },
-    "8025": { "label": "Mailpit", "onAutoForward": "silent" },
-    "8443": { "label": "DOORS Next (proxy experimental)", "onAutoForward": "silent" }
+    "8025": { "label": "Mailpit", "onAutoForward": "silent" }
   },
-  "postCreateCommand": "chmod +x infra/up.sh infra/down.sh infra/up-proxy.sh"
+  "postCreateCommand": "chmod +x infra/up.sh infra/down.sh"
 }
