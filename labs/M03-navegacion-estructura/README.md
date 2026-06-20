@@ -1,10 +1,15 @@
 # M03 · DOORS Next: navegación y estructura
 
-[← Página anterior](../M02-fundamentos-requisitos/README.md) · [Siguiente página →](../M04-creacion-mantenimiento/README.md)
+[← Página anterior](../M02-fundamentos-requisitos/M02-01-clasificar-requisitos.md) · [Siguiente página →](M03-01-navegar-y-vistas.md)
 
 Recorrido **operativo** por la herramienta: cómo moverte por el proyecto, abrir un **módulo**
 y entender su jerarquía y atributos, y cómo usar **vistas y filtros** para mirar la
 información de distintas formas.
+
+> [!NOTE]
+> **Cómo funciona este módulo** — primero la **teoría** (sección 1) y una **demostración
+> guiada** en la herramienta (sección 2). Después **practicas tú** con el laboratorio
+> (sección 3): unos minutos, recapitulamos y seguimos.
 
 ## Qué aprenderás
 
@@ -13,22 +18,11 @@ información de distintas formas.
 - Consultar los **atributos** de un artefacto.
 - Aplicar y reconocer **vistas y filtros**.
 
-## Ejercicios de este módulo
-
-| Lab | Título |
-|-----|--------|
-| M03-01 | Navegación general y estructura del proyecto |
-| M03-02 | El módulo: jerarquía, numeración y atributos |
-| M03-03 | Vistas y filtros |
-
 ---
 
-## M03-01 · Navegación general y estructura del proyecto
+## 1. Teoría
 
-> [!NOTE]
-> **Objetivo** — identificar las áreas principales de un proyecto y localizar módulos y artefactos.
-
-### Conceptos clave
+### Zonas del proyecto
 
 | Zona | Qué contiene |
 |---|---|
@@ -37,62 +31,7 @@ información de distintas formas.
 | **Colecciones** | Agrupaciones de artefactos para revisar o publicar. |
 | **Carpetas / Vistas** | Las carpetas organizan; las vistas guardan formas de listar. |
 
-### En DOORS Next
-
-La pestaña **Módulos** lista los módulos del proyecto con su ID, nombre y tipo.
-
-![Lista de módulos del proyecto](../img/modulos-lista.png)
-
-El desplegable **Crear** muestra los **tipos disponibles** según la plantilla aplicada al proyecto.
-
-![Menú Crear con los tipos disponibles de la plantilla](../img/crear-menu.png)
-
-### Laboratorio
-
-**Acción** — abre la pestaña **Módulos**.
-
-> [!NOTE]
-> **Por qué** — es donde se trabaja con documentos de requisitos completos.
-> **Resultado esperado:** ves al menos un módulo con su **ID** y **Tipo de artefacto**.
-
-**Acción** — abre el desplegable **Crear**.
-
-> [!NOTE]
-> **Por qué** — los tipos ofrecidos dependen de la **plantilla** del proyecto.
-> **Resultado esperado:** aparecen opciones como *Module* y tipos de artefacto.
-
-## ✅ Conclusiones
-
-- El proyecto separa la información en **Artefactos, Módulos y Colecciones**.
-- Lo que puedes crear depende de la **plantilla** aplicada en M01.
-
-## Comprueba
-
-- [ ] Sabes qué pestaña usar para abrir un documento de requisitos con su estructura completa.
-
-## 🏆 Reto
-
-Averigua cuántos artefactos contiene el módulo del proyecto **sin abrirlo del todo**.
-
-<details>
-<summary>Ver solución</summary>
-
-<br>
-
-En la lista de **Módulos**, el pie de la tabla indica el recuento; al abrir el módulo, el pie
-muestra *"Mostrando N de N"*.
-
-</details>
-
----
-
-## M03-02 · El módulo: jerarquía, numeración y atributos
-
-> [!NOTE]
-> **Objetivo** — leer la jerarquía y la numeración de un módulo y consultar los atributos de
-> un artefacto seleccionado.
-
-### Conceptos clave
+### El módulo: jerarquía, numeración y atributos
 
 | Concepto | Qué es |
 |---|---|
@@ -101,65 +40,7 @@ muestra *"Mostrando N de N"*.
 | **ID** | Identificador **estable** del artefacto, independiente de su posición. |
 | **Panel lateral** | Muestra los **atributos** del artefacto seleccionado. |
 
-### En DOORS Next
-
-Al abrir un módulo, la columna **Contenido** muestra la jerarquía con su numeración y la
-columna **ID** el identificador de cada artefacto. A la izquierda, el panel de **Vistas**; a
-la derecha, **Módulo / Artefacto seleccionado**.
-
-![Editor de módulo con jerarquía, IDs y paneles de vistas y atributos](../img/modulo-editor.png)
-
-Al seleccionar un artefacto, el panel **Artefacto seleccionado** muestra sus atributos: módulo,
-proyecto, creado/modificado por y cuándo, tipo (p. ej. *Heading*) y formato, además de accesos
-a **comentarios**, **enlaces** y **dónde se utiliza**.
-
-![Panel de atributos del artefacto seleccionado](../img/modulo-atributos.png)
-
-### Laboratorio
-
-**Acción** — abre el módulo desde la pestaña **Módulos**.
-
-> [!NOTE]
-> **Por qué** — es la vista de trabajo principal sobre requisitos.
-> **Resultado esperado:** ves encabezados numerados (1, 1.1, 1.2…) y requisitos.
-
-**Acción** — selecciona un **encabezado** y luego un **requisito**.
-
-> [!NOTE]
-> **Por qué** — los atributos cambian según el artefacto.
-> **Resultado esperado:** el panel derecho muestra Tipo, autor, fechas y enlaces.
-
-## ✅ Conclusiones
-
-- La numeración refleja la jerarquía, pero el **ID** es lo que identifica de forma estable.
-- Los atributos **viven en el artefacto** y se consultan en el panel lateral.
-
-## Comprueba
-
-- [ ] Sabes responder: si mueves un requisito a otra sección, ¿cambia su **ID**? *(no)*
-
-## 🏆 Reto
-
-Encuentra, para un artefacto, dónde verías sus **enlaces** y **dónde se utiliza**.
-
-<details>
-<summary>Ver solución</summary>
-
-<br>
-
-En el panel **Artefacto seleccionado**, abajo: **Enlaces de artefacto** y **Dónde se utiliza el artefacto**.
-
-</details>
-
----
-
-## M03-03 · Vistas y filtros
-
-> [!NOTE]
-> **Objetivo** — aplicar una vista guardada y entender filtros y columnas como forma de mirar
-> los mismos datos.
-
-### Conceptos clave
+### Vistas y filtros
 
 | Concepto | Qué es |
 |---|---|
@@ -167,47 +48,54 @@ En el panel **Artefacto seleccionado**, abajo: **Enlaces de artefacto** y **Dón
 | **Cambiar de vista** | No modifica los datos: solo cambia **cómo se muestran**. |
 | **Filtro** | Acota qué artefactos se ven (por atributo, tipo, texto…). |
 
-### En DOORS Next
+> [!IMPORTANT]
+> Aplicar una vista **no cambia los datos**, solo la **presentación**. Filtros y columnas son
+> la base de las **matrices y la trazabilidad** que verás en M05.
 
-El panel **Vistas** ofrece vistas guardadas (p. ej. *Module Content Only*, *Module Heading and
-Content*, *Module Heading Outline*). Al aplicar una, la barra superior indica **Ver: \<nombre\>**
-y la tabla se reordena.
+---
+
+## 2. Demostración guiada
+
+> [!NOTE]
+> Recorrido completo que **vemos juntos**. El detalle para repetirlo está en el laboratorio
+> de la sección 3.
+
+### A · Navegación general
+
+La pestaña **Módulos** lista los módulos del proyecto con su ID, nombre y tipo. El desplegable
+**Crear** muestra los **tipos disponibles** según la plantilla aplicada.
+
+![Lista de módulos del proyecto](../img/modulos-lista.png)
+
+![Menú Crear con los tipos disponibles de la plantilla](../img/crear-menu.png)
+
+### B · Leer un módulo
+
+Al abrir un módulo, la columna **Contenido** muestra la jerarquía con su numeración y la
+columna **ID** el identificador de cada artefacto. Al seleccionar un artefacto, el panel
+**Artefacto seleccionado** muestra sus atributos (tipo, autor, fechas, enlaces).
+
+![Editor de módulo con jerarquía, IDs y paneles de vistas y atributos](../img/modulo-editor.png)
+
+![Panel de atributos del artefacto seleccionado](../img/modulo-atributos.png)
+
+### C · Vistas
+
+El panel **Vistas** ofrece vistas guardadas (*Module Content Only*, *Module Heading and
+Content*, *Module Heading Outline*). Al aplicar una, la barra superior indica **Ver: \<nombre\>**.
 
 ![Módulo con la vista "Module Heading and Content" aplicada](../img/modulo-vista.png)
 
-### Laboratorio
+---
 
-**Acción** — en el panel **Vistas**, aplica *Module Heading Outline*.
+## 3. Ahora practica tú
 
-> [!NOTE]
-> **Por qué** — muestra solo la estructura de encabezados.
-> **Resultado esperado:** se ven los encabezados sin el cuerpo de los requisitos.
+> [!IMPORTANT]
+> **Dinámica** — haz el laboratorio por tu cuenta (unos **15 min**). Al terminar, lo
+> **recapitulamos** en común y continuamos con el siguiente módulo.
 
-**Acción** — aplica *Module Heading and Content*.
+| Lab | Título | Qué harás | Tiempo |
+|-----|--------|-----------|--------|
+| [M03-01](M03-01-navegar-y-vistas.md) | Navegar, leer un módulo y aplicar vistas | Recorrer Módulos y el menú Crear, leer jerarquía/ID/atributos y aplicar vistas | ~15 min |
 
-> [!NOTE]
-> **Por qué** — combina encabezados y contenido.
-> **Resultado esperado:** la barra indica **Ver: Module Heading and Content** y se muestran ambos.
-
-## ✅ Conclusiones
-
-- Las vistas adaptan la **presentación** al objetivo (revisar, exportar, analizar) sin tocar los datos.
-- Filtros y columnas son la base de las **matrices y la trazabilidad** que verás más adelante.
-
-## Comprueba
-
-- [ ] Sabes responder: aplicar otra vista, ¿cambia el contenido o solo la presentación? *(solo la presentación)*
-
-## 🏆 Reto
-
-Identifica en la barra superior del módulo cómo saber **qué vista** está aplicada.
-
-<details>
-<summary>Ver solución</summary>
-
-<br>
-
-La barra superior muestra **Ver: \<nombre de la vista\>** junto al selector de vistas; si no
-hay vista aplicada, aparece la vista por defecto.
-
-</details>
+→ Empieza por **[M03-01 — Navegar, leer un módulo y aplicar vistas](M03-01-navegar-y-vistas.md)**.
