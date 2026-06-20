@@ -61,6 +61,18 @@ mantenerlos con tipos, atributos y estados.
 | **Atributo** | Dato del artefacto; editable también **como columna** en la tabla. |
 | **Estado** | Avanza solo por las transiciones del flujo de trabajo. |
 
+> [!IMPORTANT]
+> **No confundas 3 cosas distintas** — la **jerarquía** del módulo es solo la **estructura
+> del documento** (un índice/outline), no implica dependencia ni ciclo de vida:
+>
+> | Eje | Se modela con | Qué expresa |
+> |---|---|---|
+> | **Estructura** | Jerarquía/sangría (1, 1.1) | Contexto y organización: "está dentro de…". |
+> | **Dependencias** | **Enlaces tipados** (M05) | Relaciones lógicas (deriva de, satisface, valida). |
+> | **Ciclo de vida** | **Estado** + flujo (este módulo) | Madurez de cada requisito. |
+>
+> La sangría **agrupa**; los **enlaces** relacionan; el **estado** marca la madurez.
+
 ---
 
 ## 2. Demostración guiada

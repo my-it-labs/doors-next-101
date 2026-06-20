@@ -158,11 +158,20 @@ Guárdala (**clic fuera** o <kbd>Ctrl</kbd>+<kbd>5</kbd>).
 
 ### Paso 7 · Indenta el requisito (crea la jerarquía)
 
-**Acción** — con el requisito seleccionado, pulsa **Aumentar sangría** (la flecha ➡️
-de la barra del módulo). También con clic derecho → opción de sangría.
+De partida, el encabezado y el requisito están **al mismo nivel** (son "hermanos"):
 
-**Qué ves** — el requisito se desplaza a la derecha y su número pasa de **2** a
-**1.1**: ahora cuelga de "Acceso".
+![Requisito al mismo nivel que el encabezado, antes de indentar](../img/antes-indentar.png)
+
+**Acción** — selecciona la fila del **requisito** y aplícale sangría:
+- clic derecho → **Disminuir nivel de artefacto** (<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>→</kbd>), o
+- el botón **Aumentar sangría** (➡️) de la barra del módulo.
+
+![Requisito sangrado: ahora cuelga del encabezado](../img/despues-indentar.png)
+
+**Qué ves** — el requisito se **desplaza a la derecha** y pasa a colgar de "Acceso".
+Fíjate en que "Acceso" muestra ahora un **triángulo ▾** (señal de que tiene hijos y se
+puede plegar). Internamente, su **número de sección** pasa de **2** a **1.1**; si no lo ves,
+puedes mostrarlo como **columna** (lo verás en M04-02).
 
 > [!IMPORTANT]
 > **Implicación clave** — la numeración (`1.1`) es **consecuencia** de la jerarquía,
