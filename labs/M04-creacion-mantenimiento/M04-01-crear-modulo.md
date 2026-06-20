@@ -6,7 +6,7 @@
 > **Objetivo** — crear desde cero un módulo de requisitos y montar una pequeña
 > jerarquía de encabezados y requisitos, entendiendo cómo nace la numeración.
 >
-> ⏱️ ~20 min · 🗂️ Trabajas en **tu** proyecto · 🎯 Resultado: un documento numerado.
+> ⏱️ ~15 min · 🗂️ Trabajas en **tu** proyecto · 🎯 Resultado: un documento numerado.
 
 ---
 

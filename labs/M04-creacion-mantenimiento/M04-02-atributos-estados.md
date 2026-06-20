@@ -7,7 +7,7 @@
 > **atributos**), editar atributos cómodamente **como columnas** y cambiar el **estado**
 > de un requisito en su flujo de trabajo.
 >
-> ⏱️ ~25 min · 🗂️ Sobre tu módulo `SRS - Tienda Web` · 🎯 Resultado: requisitos clasificados y con estado.
+> ⏱️ ~15 min · 🗂️ Sobre tu módulo `SRS - Tienda Web` · 🎯 Resultado: requisitos clasificados y con estado.
 
 ---
 
