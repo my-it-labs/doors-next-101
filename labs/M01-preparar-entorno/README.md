@@ -114,7 +114,7 @@ elige **Aplicar una plantilla de proyecto**.
 
 Selecciona **Systems Requirement Template** y confirma con **Finalizar**:
 
-![Selección de plantilla de proyecto](../img/aplicar-plantilla.png)
+![Selección de plantilla: marca Systems Requirement Template (verde), no MEC (rojo)](../img/aplicar-plantilla.png)
 
 > [!IMPORTANT]
 > **Elige una plantilla de requisitos.** Recomendada: **Systems Requirement Template**
