@@ -112,13 +112,22 @@ Un área recién creada no tiene **tipos de artefacto** todavía. Vuelve a
 `https://localhost:9443/rm`, abre tu proyecto y, en el aviso de configuración,
 elige **Aplicar una plantilla de proyecto**.
 
-Selecciona una plantilla y confirma con **Finalizar**:
+Selecciona **Systems Requirement Template** y confirma con **Finalizar**:
 
 ![Selección de plantilla de proyecto](../img/aplicar-plantilla.png)
 
+> [!IMPORTANT]
+> **Elige una plantilla de requisitos.** Recomendada: **Systems Requirement Template**
+> (o *Agile Requirements Template*). Estas traen los **tipos de módulo** que necesitarás
+> en M04.
+>
+> ❌ **No** elijas **MEC**/**MPC** ni las *SAFe Component*: no son de requisitos y tu
+> proyecto se quedaría **sin tipo Módulo** (el botón *Crear* no te dejaría crear un módulo).
+
 - Las que terminan en *Template* aportan solo la **estructura y los tipos** (tú
   creas el contenido).
-- Las que terminan en *Sample* añaden además **contenido de ejemplo** para explorar.
+- Las que terminan en *Sample* añaden además **contenido de ejemplo** para explorar
+  (p. ej. *JKE Banking Sample*).
 
 Tras aplicarla, el panel del proyecto muestra su contenido.
 
