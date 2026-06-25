@@ -114,20 +114,32 @@ Después:
 
 ### Vía 2 — GitHub CLI (`gh`)
 
-| SO | Instalar `gh` |
+| SO | Instalar `gh` (y Git) |
 |----|----------------|
-| Windows | `winget install GitHub.cli`  (o `choco install gh`, o el `.msi`) |
-| macOS | `brew install gh` |
-| Linux (Debian/Ubuntu) | `sudo apt install gh` (con el repo de GitHub CLI) |
+| Windows | `winget install GitHub.cli` **y** `winget install Git.Git` (o los `.msi`) |
+| macOS | `brew install gh` (Git ya viene con las *Command Line Tools*) |
+| Linux (Debian/Ubuntu) | `sudo apt install gh git` (con el repo de GitHub CLI) |
+
+> **Git es obligatorio.** Si ves `unable to find git executable in PATH`, instala Git
+> y **cierra y vuelve a abrir** la terminal para que se actualice el PATH.
 
 Después (mismo comando en todos los SO):
 ```bash
-gh auth login
+gh auth login -s codespace
 gh codespace ports forward 9443:9443 8025:8025
 ```
 Elige tu Codespace si lo pide (o añade `-c <nombre-del-codespace>`). **Deja la
 terminal abierta** mientras trabajas. Abre `https://localhost:9443/rm`.
 `Ctrl+C` corta el túnel.
+
+> [!IMPORTANT]
+> **Error `HTTP 403 ... needs the "codespace" scope`** — tu sesión de `gh` no tiene
+> permiso para Codespaces (pasa si hiciste `gh auth login` sin el scope). Arréglalo
+> **sin volver a loguearte** con:
+> ```bash
+> gh auth refresh -h github.com -s codespace
+> ```
+> Se abre el navegador, autorizas, y repites el `gh codespace ports forward`.
 
 ---
 
@@ -138,6 +150,10 @@ terminal abierta** mientras trabajas. Abre `https://localhost:9443/rm`.
   reintenta en un momento.
 - **El login no avanza / redirige raro**: estás entrando por la URL `*.app.github.dev`
   en vez de por `localhost`. Usa el reenvío de puerto.
+- **`gh`: `HTTP 403 ... needs the "codespace" scope`** (al reenviar el puerto): añade el
+  permiso con `gh auth refresh -h github.com -s codespace` y reintenta.
+- **`gh`/`git`: `unable to find git executable in PATH`**: instala **Git** (en Windows
+  `winget install Git.Git`) y reabre la terminal.
 - **"No está autorizado" al crear un módulo/artefacto, o falta la licencia de autor**:
   si ya habías levantado una versión anterior de la imagen, los datos quedaron en el
   volumen y no se actualizan solos. Bórralo y vuelve a arrancar para que se siembre de
