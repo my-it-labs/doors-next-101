@@ -97,6 +97,11 @@ escritorio **o** GitHub CLI — ver tabla por SO más abajo).
 El **comando** de reenvío es idéntico en todos los SO; lo que cambia es **cómo
 instalas** el cliente. Elige UNA de las dos vías.
 
+> [!TIP]
+> **La Vía 1 (VS Code de escritorio) es la más fiable.** La Vía 2 (`gh`) a veces falla con
+> `create tunnel port failed ... 400: Bad Request` por un problema del túnel del propio CLI.
+> Si te topas con eso, usa la Vía 1 y olvídate de `gh`.
+
 ### Vía 1 — VS Code de escritorio (recomendada, sin línea de comandos)
 
 | SO | Instalar VS Code |
@@ -141,6 +146,14 @@ terminal abierta** mientras trabajas. Abre `https://localhost:9443/rm`.
 > ```
 > Se abre el navegador, autorizas, y repites el `gh codespace ports forward`.
 
+> [!WARNING]
+> **Error `create tunnel port failed ... 400: Bad Request`** — fallo conocido del túnel de
+> `gh`. En orden:
+> 1. Actualiza `gh` (`winget upgrade GitHub.cli`) y **reabre la terminal**.
+> 2. Reenvía **un solo puerto**: `gh codespace ports forward 9443:9443 -c <tu-codespace>`.
+> 3. Comprueba si ya estaba reenviado: `gh codespace ports -c <tu-codespace>`.
+> 4. Si sigue fallando, **cambia a la Vía 1 (VS Code de escritorio)** — es la solución segura.
+
 ---
 
 ## Comprobaciones y problemas
@@ -154,6 +167,9 @@ terminal abierta** mientras trabajas. Abre `https://localhost:9443/rm`.
   permiso con `gh auth refresh -h github.com -s codespace` y reintenta.
 - **`gh`/`git`: `unable to find git executable in PATH`**: instala **Git** (en Windows
   `winget install Git.Git`) y reabre la terminal.
+- **`gh`: `create tunnel port failed ... 400: Bad Request`**: fallo del túnel de `gh`.
+  Actualiza `gh` (`winget upgrade GitHub.cli`), reenvía un puerto a la vez, o usa la
+  **Vía 1 (VS Code de escritorio)**, que es la opción fiable.
 - **"No está autorizado" al crear un módulo/artefacto, o falta la licencia de autor**:
   si ya habías levantado una versión anterior de la imagen, los datos quedaron en el
   volumen y no se actualizan solos. Bórralo y vuelve a arrancar para que se siembre de
