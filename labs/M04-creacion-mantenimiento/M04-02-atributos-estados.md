@@ -5,7 +5,10 @@
 > [!NOTE]
 > **Objetivo** — entender qué información lleva cada requisito (su **tipo** y sus
 > **atributos**), editar atributos cómodamente **como columnas** y cambiar el **estado**
-> de un requisito en su flujo de trabajo.
+> (atributo **Status**) de un requisito.
+>
+> Requiere un proyecto con plantilla **Systems Requirement Sample** (sus tipos traen
+> *Status*, *Priority*, *Risk*…). Con la *Template* a secas no hay atributos que editar.
 >
 > ⏱️ ~15 min · 🗂️ Sobre tu módulo `SRS - Tienda Web` · 🎯 Resultado: requisitos clasificados y con estado.
 
@@ -29,8 +32,8 @@ requisito, mostrar un atributo **como columna** para editarlo en varias filas, y
 |---|---|
 | **Tipo de artefacto** (Heading, Requirement…) | Determina **qué atributos** tiene disponibles ese artefacto. |
 | **Atributos de sistema** | ID, autor, fechas de creación/modificación, tipo, formato. Los pone DOORS Next. |
-| **Atributos personalizados** | Los de la plantilla: p. ej. *Estado*, *Prioridad*, *Riesgo*. |
-| **Estado** | Atributo especial gobernado por un **flujo de trabajo**: solo permite ciertas transiciones (*Borrador → Revisión → Aprobado*). |
+| **Atributos personalizados** | Los de la plantilla: p. ej. *Status*, *Priority*, *Risk*. |
+| **Estado (Status)** | Atributo de lista que marca la **madurez** (*Draft → Reviewed → Approved*). Si la plantilla define un **flujo de trabajo**, solo deja las transiciones permitidas; si no, eliges el valor de la lista libremente. |
 
 > [!IMPORTANT]
 > Los atributos **viven en el artefacto**, no en la fila del documento. El mismo artefacto
@@ -75,9 +78,9 @@ necesita Prioridad ni Estado).
 
 ### Paso 3 · Muestra un atributo como columna
 
-**Acción** — abre el menú **Más acciones** (icono **▤** arriba a la derecha del módulo) y
-elige **Configurar las columnas a visualizar…**. Añade una columna para un atributo de la
-plantilla, por ejemplo **Prioridad** o **Estado**.
+**Acción** — abre el menú de columnas (la **flecha ▾** en una cabecera de columna, o
+**Más acciones ▤** arriba a la derecha) y elige **Configurar las columnas a visualizar…**.
+Añade columnas para atributos de la plantilla, por ejemplo **Priority** y **Status**.
 
 ![Menú Más acciones del módulo, con la opción de configurar columnas](../img/modulo-mas-acciones.png)
 
@@ -111,18 +114,24 @@ artefacto se actualiza.
 
 ---
 
-### Paso 5 · Cambia el estado de un requisito
+### Paso 5 · Cambia el estado (Status) de un requisito
 
-**Acción** — selecciona un requisito y localiza su **Estado** (como columna o en el panel del
-artefacto). Cambia su valor siguiendo el flujo (p. ej. de *Borrador* a *Revisión*). Si el
-estado se gobierna por **acciones de flujo de trabajo**, usa la acción correspondiente.
+**Acción** — muestra la columna **Status** (o abre el requisito en **Artefacto seleccionado →
+Editar**). Selecciona un requisito y cambia su **Status** (p. ej. de *Draft* a *Reviewed* o
+*Approved*). Guarda (clic fuera o <kbd>Ctrl</kbd>+<kbd>5</kbd>).
 
-**Qué pasa** — el estado cambia **solo** al valor permitido por la transición.
+**Qué pasa** — el requisito queda marcado con ese estado y se registra el cambio.
 
 > [!IMPORTANT]
-> **Implicación** — el flujo **no deja saltarse pasos**: solo permite las transiciones
-> definidas. Así se controla la **madurez** del requisito. Los estados concretos dependen de
-> la **plantilla**; el mecanismo (un estado que avanza por transiciones) es siempre el mismo.
+> **Madurez, no posición** — el estado dice en qué punto de su vida está el requisito: es el
+> **eje 3**, distinto de la jerarquía (eje 1) y de los enlaces (eje 2). Si la plantilla tiene un
+> **flujo de trabajo**, solo te dejará las transiciones permitidas (no puedes saltar a *Approved*
+> sin pasar por revisión). Si no lo tiene, es una lista libre; el concepto es el mismo.
+
+> [!NOTE]
+> **Ojo con la columna "Estado (Predeterminado)"** — esa es el estado del *flujo de trabajo*
+> integrado y en muchas plantillas viene **vacía** y no editable. Para este lab usa el atributo
+> **Status**.
 
 ---
 
@@ -143,8 +152,10 @@ estado se gobierna por **acciones de flujo de trabajo**, usa la acción correspo
 > [!WARNING]
 > - **No veo el atributo en el panel** → el **tipo** de ese artefacto no lo define; comprueba
 >   que es un requisito, no un encabezado.
-> - **No puedo poner cualquier estado** → es correcto: el **flujo de trabajo** solo permite
->   las transiciones definidas por la plantilla.
+> - **La columna "Estado (Predeterminado)" está vacía y no deja editarse** → es el estado del
+>   *flujo de trabajo* integrado, que esta plantilla no configura. Usa el atributo **Status**.
+> - **No me deja poner cualquier estado** → si hay flujo de trabajo, es correcto: solo permite
+>   las transiciones definidas.
 > - **No encuentro dónde añadir columnas** → está en **Más acciones (▤) → Configurar las
 >   columnas a visualizar…**, no en el panel derecho.
 
@@ -158,9 +169,9 @@ no basta con un atributo de texto libre para ese fin.
 
 <br>
 
-El atributo **Estado**, gobernado por el **flujo de trabajo**. No basta con texto libre
-porque cualquiera escribiría "aprobado" sin control; el flujo garantiza que solo se llega a
-*Aprobado* mediante las transiciones válidas (p. ej. tras *Revisión*), dejando además **traza**
-del cambio.
+El atributo **Status** (lista de valores: *Draft / Reviewed / Approved*). No basta con texto
+libre porque cualquiera escribiría "aprobado" sin control; una **lista** acota los valores y,
+si además hay **flujo de trabajo**, garantiza que solo se llega a *Approved* por las
+transiciones válidas (p. ej. tras *Reviewed*), dejando **traza** del cambio.
 
 </details>

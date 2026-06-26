@@ -112,22 +112,22 @@ Un área recién creada no tiene **tipos de artefacto** todavía. Vuelve a
 `https://localhost:9443/rm`, abre tu proyecto y, en el aviso de configuración,
 elige **Aplicar una plantilla de proyecto**.
 
-Selecciona **Systems Requirement Template** y confirma con **Finalizar**:
+Selecciona **Systems Requirement Sample** y confirma con **Finalizar**:
 
-![Selección de plantilla: marca Systems Requirement Template (verde), no MEC (rojo)](../img/aplicar-plantilla.png)
+![Selección de plantilla: marca Systems Requirement Sample (verde), no MEC (rojo)](../img/aplicar-plantilla.png)
 
 > [!IMPORTANT]
-> **Elige una plantilla de requisitos.** Recomendada: **Systems Requirement Template**
-> (o *Agile Requirements Template*). Estas traen los **tipos de módulo** que necesitarás
-> en M04.
+> **Elige `Systems Requirement Sample`.** Es de requisitos y, además de los tipos de
+> **módulo**, trae **atributos ya definidos** (Status, Priority, Risk…) que necesitarás en
+> M04-02. Incluye también módulos de ejemplo para explorar en M02 y M03.
 >
-> ❌ **No** elijas **MEC**/**MPC** ni las *SAFe Component*: no son de requisitos y tu
-> proyecto se quedaría **sin tipo Módulo** (el botón *Crear* no te dejaría crear un módulo).
+> ❌ **No** elijas **MEC**/**MPC** ni las *SAFe Component* (no son de requisitos: el proyecto
+> se queda **sin tipo Módulo**).
+> ❌ Evita también **Systems Requirement *Template*** a secas: deja crear módulos, pero su tipo
+> viene **sin atributos de estado**, y entonces M04-02 no se puede practicar.
 
-- Las que terminan en *Template* aportan solo la **estructura y los tipos** (tú
-  creas el contenido).
-- Las que terminan en *Sample* añaden además **contenido de ejemplo** para explorar
-  (p. ej. *JKE Banking Sample*).
+- Las *Template* aportan solo **estructura y tipos** (a veces sin atributos).
+- Las *Sample* traen **tipos completos + contenido de ejemplo** → más fácil de aprender.
 
 Tras aplicarla, el panel del proyecto muestra su contenido.
 
