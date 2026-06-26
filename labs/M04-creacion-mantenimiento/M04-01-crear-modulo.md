@@ -66,9 +66,13 @@ Al terminar tendrás un documento de requisitos navegable y numerado.
 **Importar artefacto…** y **Cargar artefacto…**. Todavía no se crea nada.
 
 > [!TIP]
-> **Opciones** — los nombres dependen de la plantilla. En una básica verás **Module**;
-> en otras, tipos con nombre propio (p. ej. *Use Case Specification*). Elige el que
-> represente un **módulo**.
+> **Opciones** — los nombres dependen de la plantilla. Verás un tipo que representa un
+> **módulo** (p. ej. **Module**). Elige ese.
+
+> [!WARNING]
+> **Si no aparece ningún tipo de módulo** (solo *Importar/Cargar*), tu proyecto no es de
+> requisitos. Vuelve a [M01](../M01-preparar-entorno/README.md) y aplica
+> **Systems Requirement Sample**.
 
 > [!NOTE]
 > **Por qué** — DOORS Next no tiene un único "nuevo documento": lo que puedes crear lo
@@ -145,7 +149,11 @@ fuera o pulse Ctrl+5"*. Al ser la primera de primer nivel, su número será **1*
 ### Paso 6 · Añade un requisito
 
 **Acción** — pulsa **Crear** otra vez para añadir una segunda fila. En el **selector de
-tipo** elige un tipo de **requisito** (p. ej. *Software Requirement*) y escribe:
+tipo** elige un tipo de **requisito** de tu plantilla (p. ej. *System Requirement*) y escribe:
+
+> [!TIP]
+> Elige un tipo de **requisito** (no *Heading*): así en M04-02 tendrá atributos como **Status**
+> y **Priority** para practicar.
 
 > `El sistema permite iniciar sesión con usuario y contraseña`
 

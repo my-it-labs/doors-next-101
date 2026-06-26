@@ -24,6 +24,11 @@ requisito, mostrar un atributo **como columna** para editarlo en varias filas, y
 
 - Haber completado [M04-01](M04-01-crear-modulo.md): un módulo con secciones y requisitos en **tu** proyecto.
 
+> [!TIP]
+> **Red de seguridad** — si el requisito que creaste en M04-01 **no muestra Status/Priority**,
+> usa cualquier requisito de un **módulo de ejemplo** del Sample (p. ej. *AMR System Requirements
+> Specification*). El ejercicio es idéntico y esos requisitos sí traen los atributos.
+
 ---
 
 ## Conceptos clave
@@ -67,7 +72,7 @@ que pertenece, **Proyecto**, **Creado el / por**, **Modificado el / por**, el **
 del requisito anterior.
 
 **Qué ves** — el encabezado muestra **menos** atributos de contenido que un requisito (no
-necesita Prioridad ni Estado).
+necesita Priority ni Status).
 
 > [!NOTE]
 > **Por qué** — no todos los artefactos tienen los mismos campos. Si un atributo que esperas
@@ -98,8 +103,12 @@ Añade columnas para atributos de la plantilla, por ejemplo **Priority** y **Sta
 
 ### Paso 4 · Edita el atributo en varias filas
 
-**Acción** — haz clic en la celda de la columna nueva (p. ej. **Prioridad**) de un requisito
-y elige un valor (p. ej. *Alta*). Repite en otro requisito con otro valor.
+**Acción** — haz clic en la celda de la columna nueva (p. ej. **Priority**) de un requisito
+y elige un valor (p. ej. *High*). Repite en otro requisito con otro valor.
+
+> [!TIP]
+> Si la celda **no se deja editar al hacer un solo clic**, selecciona la fila y pulsa **Editar**
+> (panel derecho) o doble clic en la celda.
 
 **Qué ves** — el valor queda guardado y visible en la tabla; la fecha de **modificado** del
 artefacto se actualiza.
@@ -138,14 +147,14 @@ Editar**). Selecciona un requisito y cambia su **Status** (p. ej. de *Draft* a *
 ## ✅ Resultado
 
 - Sabes leer el panel **Artefacto seleccionado** y por qué dos tipos muestran atributos distintos.
-- Tienes al menos un atributo (p. ej. *Prioridad*) como **columna** y editado en varias filas.
-- Has cambiado el **estado** de un requisito respetando su flujo.
+- Tienes al menos un atributo (p. ej. *Priority*) como **columna** y editado en varias filas.
+- Has cambiado el **Status** de un requisito.
 
 ## Comprueba
 
 - [ ] El panel del requisito muestra **Tipo**, autor y fechas.
 - [ ] La **columna** del atributo que añadiste se ve en la tabla con valores.
-- [ ] El **estado** de un requisito ha avanzado al siguiente valor del flujo.
+- [ ] El **Status** de un requisito ha cambiado de valor.
 
 ## Errores frecuentes
 
