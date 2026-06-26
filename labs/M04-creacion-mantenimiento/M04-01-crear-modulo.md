@@ -82,7 +82,8 @@ Al terminar tendrás un documento de requisitos navegable y numerado.
 
 ### Paso 3 · Elige el tipo módulo y abre el diálogo
 
-**Acción** — en el menú, haz clic en el tipo **módulo** de tu plantilla.
+**Acción** — en el menú, haz clic en el tipo **módulo** de tu plantilla. En el diálogo,
+**verifica que `Formato del artefacto` = `Module`**: eso es lo que lo convierte en un módulo.
 
 ![Diálogo "Crear artefacto" con el tipo Module seleccionado](../img/crear-dialogo.png)
 
@@ -149,11 +150,13 @@ fuera o pulse Ctrl+5"*. Al ser la primera de primer nivel, su número será **1*
 ### Paso 6 · Añade un requisito
 
 **Acción** — pulsa **Crear** otra vez para añadir una segunda fila. En el **selector de
-tipo** elige un tipo de **requisito** de tu plantilla (p. ej. *System Requirement*) y escribe:
+tipo** elige el tipo de requisito **`System Requirement`** (no *Heading* ni el tipo por
+defecto) y escribe:
 
-> [!TIP]
-> Elige un tipo de **requisito** (no *Heading*): así en M04-02 tendrá atributos como **Status**
-> y **Priority** para practicar.
+> [!IMPORTANT]
+> **Elige bien el tipo aquí.** Debe ser un **requisito** como **`System Requirement`**: el
+> **tipo** es el que aporta los atributos **Status** y **Priority** que usarás en M04-02. Si
+> dejas *Heading* o un tipo base sin atributos, luego **no podrás editar el estado**.
 
 > `El sistema permite iniciar sesión con usuario y contraseña`
 

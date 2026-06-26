@@ -79,6 +79,15 @@ necesita Priority ni Status).
 > no aparece, es que el **tipo** de ese artefacto no lo define. Cambiar el tipo cambia los
 > atributos disponibles.
 
+> [!IMPORTANT]
+> **Para poder editar Status, el requisito debe ser de un tipo que lo incluya** (p. ej.
+> **`System Requirement`**). Compruébalo en **Artefacto seleccionado → Tipo**. Si pone
+> *Heading* o un tipo sin Status:
+> 1. Añade la columna **Tipo de artefacto** (menú de columnas → *Configurar las columnas…*).
+> 2. En esa celda, cambia el tipo a **`System Requirement`**.
+>
+> Al cambiar el tipo aparecerán **Status** y **Priority**.
+
 ---
 
 ### Paso 3 · Muestra un atributo como columna
@@ -159,8 +168,9 @@ Editar**). Selecciona un requisito y cambia su **Status** (p. ej. de *Draft* a *
 ## Errores frecuentes
 
 > [!WARNING]
-> - **No veo el atributo en el panel** → el **tipo** de ese artefacto no lo define; comprueba
->   que es un requisito, no un encabezado.
+> - **No veo / no puedo editar el atributo (Status, Priority)** → el **tipo** de ese artefacto
+>   no lo define. Comprueba que es un **requisito** (no un *Heading*) y, si hace falta, cambia su
+>   **Tipo de artefacto** a **`System Requirement`** (columna *Tipo de artefacto*).
 > - **La columna "Estado (Predeterminado)" está vacía y no deja editarse** → es el estado del
 >   *flujo de trabajo* integrado, que esta plantilla no configura. Usa el atributo **Status**.
 > - **No me deja poner cualquier estado** → si hay flujo de trabajo, es correcto: solo permite
