@@ -43,6 +43,7 @@
     border-top:2px solid var(--accent);padding:2vh 4vw;font-size:1.25vw;line-height:1.5;display:none;z-index:30}
   #notes.show{display:block}
   #notes h4{color:var(--accent);font-size:1vw;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1vh}
+  #notes-body{white-space:pre-wrap}
   #help{position:fixed;top:14px;right:18px;font-size:.85vw;color:var(--muted);background:var(--panel);padding:.5em .9em;border-radius:8px;opacity:.85;z-index:30}
   @media (max-width:900px){
     h1.title{font-size:6vw}.kicker{font-size:3vw}p.lead{font-size:3.4vw}
@@ -66,93 +67,161 @@ const slides = [
     title:"IBM DOORS Next",
     tagline:"Gestión de requisitos de nueva generación",
     meta:"Presentación · ¿Qué es? · ¿Para qué sirve? · ¿Por qué lo usamos?",
-    notes:"Bienvenida. En 5 minutos vamos a ver POR QUÉ existe esta herramienta antes de tocarla. No vendo software: vendo dejar de sufrir con los requisitos. DOORS = la 'puerta' de entrada al ciclo de vida del producto." },
+    notes:`🎙️ DECIR: «Buenos días. Antes de tocar la herramienta, 5 minutos para responder tres preguntas: qué es DOORS Next, para qué sirve y por qué lo usamos en proyectos serios.»
+
+TIP: No vendas software; vende dejar de sufrir con requisitos en Word y Excel.
+DOORS = la "puerta" (Requirements) de entrada al ciclo de vida del producto.
+Transición: «Empecemos por algo que seguro os suena…»` },
 
   { img:"02-didyouknow.png", kicker:"El punto de partida", kclass:"",
     title:"¿Sabías que…?",
     lead:"La mayoría de los proyectos que fracasan no lo hacen por la tecnología, sino por una mala gestión de los requisitos.",
-    notes:"Engancha con el dato: requisitos ambiguos, incompletos o cambiantes son la causa nº1 de sobrecostes. Pregunta a la sala: ¿cuántos habéis vivido un proyecto donde 'nadie sabía qué había que construir'?" },
+    notes:`🎙️ DECIR: «La mayoría de proyectos que van mal no fallan por la tecnología: fallan porque nadie supo qué había que construir, o lo supo demasiado tarde.»
+
+PREGUNTA A LA SALA: «¿Alguien ha vivido un proyecto donde cada uno entendía algo distinto de lo mismo?» (espera 2-3 manos).
+
+TIP: Requisitos ambiguos, incompletos o que cambian sin control = causa nº1 de sobrecostes.
+Transición: «Y eso no es un fastidio pequeño…»` },
 
   { img:"03-requisitos-warning.png", kicker:"La consecuencia", kclass:"danger",
     title:"Project failure",
     lead:"Requisitos mal gestionados = retrasos, retrabajo, y un producto que no es lo que el cliente pedía.",
-    notes:"Aquí pintamos el dolor. Cada error de requisitos detectado tarde cuesta 10-100x más que si se detecta al inicio." },
+    notes:`🎙️ DECIR: «Project failure no siempre es un cartel rojo gigante: a veces es entregar tarde, gastar el doble o descubrir en producción que no era lo que el cliente quería.»
+
+TIP: Cada error de requisito detectado tarde cuesta entre 10 y 100 veces más que al inicio (regla de diez de Boehm — no hace falta citar el nombre).
+Haz una pausa de 2 segundos mirando la sala.
+Transición: «¿De dónde viene ese caos? De cuatro sitios…»` },
 
   { img:"04-docs-dispersos.png", kicker:"El problema (1/4)", kclass:"danger",
     title:"Requisitos dispersos",
     lead:"Word, Excel, correos, PDFs… La información está en silos, duplicada y sin una única fuente de verdad.",
-    notes:"Todos lo hemos hecho: 'requisitos_v3_final_DEFINITIVO.docx'. ¿Qué versión es la buena? ¿Quién cambió esto y por qué?" },
+    notes:`🎙️ DECIR: «Todos hemos tenido un "requisitos_v3_final_DEFINITIVO.docx". ¿Cuál es la versión buena? ¿Quién cambió la frase 47 y por qué?»
+
+TIP: Sin fuente única, cada equipo trabaja sobre una copia distinta → conflictos y retrabajo.
+PREGUNTA: «¿Cuántas herramientas distintas usáis hoy para guardar requisitos?» (Word, Excel, Jira, correo…)
+Transición: «Y encima, nadie sabe cómo se conectan entre sí…»` },
 
   { img:"05-proyecto-camino.png", kicker:"El problema (2/4)", kclass:"danger",
     title:"Sin trazabilidad, vas a ciegas",
     lead:"¿Este requisito de dónde viene? ¿Está cubierto por una prueba? Sin enlaces no puedes responder.",
-    notes:"Sin trazabilidad no sabes el impacto de un cambio ni si has probado todo. Análisis de impacto = imposible." },
+    notes:`🎙️ DECIR: «Si mañana el cliente cambia una frase, ¿sabéis qué pruebas hay que repetir? ¿Qué diseño se invalida? Sin trazabilidad, vais a ciegas.»
+
+TIP: Trazabilidad = poder tirar del hilo: del requisito a la prueba, al diseño, al cambio.
+Análisis de impacto sin enlaces = imposible (lo veréis en el módulo 5).
+Transición: «Y cuando cada uno mira un documento distinto…»` },
 
   { img:"06-reunion-confusion.png", kicker:"El problema (3/4)", kclass:"danger",
     title:"Equipos desalineados",
     lead:"Negocio, desarrollo, calidad y cliente entienden cosas distintas del mismo documento.",
-    notes:"Malentendidos por trabajar sobre copias distintas. Las decisiones se pierden en hilos de correo." },
+    notes:`🎙️ DECIR: «Negocio dice una cosa, desarrollo otra, calidad prueba otra. No es mala fe: es que cada uno tiene su copia y su interpretación.»
+
+TIP: Las decisiones se pierden en hilos de correo que nadie vuelve a leer.
+Analogía: «Es como cuatro personas leyendo capítulos distintos del mismo libro y creyendo que hablan del mismo final.»
+Transición: «Y cada equipo además usa su herramienta…»` },
 
   { img:"07-herramientas-desconectadas.png", kicker:"El problema (4/4)", kclass:"danger",
     title:"Herramientas desconectadas",
     lead:"Cada equipo con su herramienta y sin integración: la información no fluye.",
-    notes:"Silos de herramientas → copiar y pegar manual → errores. Falta una capa que conecte requisitos con diseño, pruebas y cambios." },
+    notes:`🎙️ DECIR: «Jira aquí, Excel allí, Word en otro sitio, pruebas en otra herramienta. Copiar y pegar manualmente. Eso no escala.»
+
+TIP: Silos de herramientas → errores de transcripción → nadie confía en los datos.
+Falta una capa que conecte requisitos con diseño, pruebas y gestión de cambios.
+Transición: «Y si encima el equipo está repartido…»` },
 
   { img:"08-equipos-distribuidos.png", kicker:"Y además…", kclass:"danger",
     title:"Equipos distribuidos",
     lead:"Distintas ubicaciones y zonas horarias multiplican la descoordinación.",
-    notes:"El trabajo distribuido/remoto agrava todo lo anterior si no hay una plataforma común." },
+    notes:`🎙️ DECIR: «Remoto, proveedores, distintas zonas horarias: todo lo anterior se multiplica si no hay una plataforma común en la nube.»
+
+TIP: No es culpa del teletrabajo; es culpa de no tener un sitio único donde trabajar.
+Transición: «¿Y cuánto cuesta todo esto?»` },
 
   { img:"10-coste.png", kicker:"La factura final", kclass:"danger",
     title:"¿Cuál es el coste?",
     lead:"Sobrecostes, plazos incumplidos, riesgo regulatorio y pérdida de confianza del cliente.",
-    notes:"Cierra el bloque de dolor con la pregunta del dinero. Todo esto se paga. Pausa dramática antes de la solución." },
+    notes:`🎙️ DECIR: «Sobrecostes, plazos que no se cumplen, auditorías que no pasáis, clientes que dejan de confiar. Eso es la factura.»
+
+TIP: PAUSA DRAMÁTICA de 3 segundos antes de pasar. Mirad la sala.
+No hace falta dar cifras; el dolor ya lo conocen.
+Transición: «Entonces, ¿qué hacemos? Usar la herramienta adecuada.»` },
 
   { img:"10b-use-right-tool.png", kicker:"La idea clave", kclass:"ok",
     title:"Usa la herramienta adecuada",
     lead:"Gestionar requisitos con documentos es como clavar un tornillo con un martillo.",
-    notes:"Puente hacia la solución: el problema no es la gente, es la herramienta. Necesitamos algo diseñado para esto." },
+    notes:`🎙️ DECIR: «Gestionar requisitos con Word y Excel es como clavar un tornillo con un martillo: a veces funciona, pero no es para eso.»
+
+TIP: El problema no es la gente; es la herramienta. Necesitamos algo diseñado para requisitos: identidad, enlaces, versiones, colaboración.
+Transición: «Esa herramienta, en nuestro caso, es esta.»` },
 
   { img:"11-solucion-doors.png", kicker:"La solución", kclass:"ok",
     title:"IBM DOORS Next",
     lead:"Una plataforma única para definir, gestionar, enlazar y colaborar sobre los requisitos durante todo el ciclo de vida.",
-    notes:"Aquí entra el producto. DOORS Next (Rational) = gestión de requisitos de nueva generación, web, colaborativa y trazable. Ahora los beneficios." },
+    notes:`🎙️ DECIR: «IBM DOORS Next: gestión de requisitos en web, colaborativa y trazable. Parte del ecosistema ELM de IBM junto con pruebas, diseño y gestión de cambios.»
+
+TIP: "Next" = nueva generación web (no confundir con DOORS Classic de escritorio — si alguien lo menciona, decid «mismo concepto, otra herramienta»).
+A partir de aquí: bloque de BENEFICIOS (5 diapositivas).
+Transición: «¿Qué ganamos concretamente?»` },
 
   { img:"14-equipo-conectado.png", kicker:"Beneficio 1", kclass:"ok",
     title:"Una única fuente de verdad",
     lead:"Todos trabajan sobre los mismos requisitos, en tiempo real y desde el navegador.",
-    notes:"Fin de las copias. Comentarios, revisiones y aprobaciones dentro de la herramienta. Colaboración real." },
+    notes:`🎙️ DECIR: «Un solo sitio, una sola versión, todos ven lo mismo en tiempo real desde el navegador. Se acabó el "¿cuál es el documento bueno?".»
+
+TIP: Comentarios, revisiones y aprobaciones dentro de la herramienta, no en el correo.
+En el curso cada uno tendrá su propio entorno para practicar sin pisarse.
+Transición: «Y no solo guardamos texto…»` },
 
   { img:"13-necesidades-negocio.png", kicker:"Beneficio 2", kclass:"ok",
     title:"De la necesidad al requisito",
     lead:"Captura la necesidad de negocio y desglósala en requisitos estructurados y gestionables.",
-    notes:"Conecta el 'qué quiere el cliente' con el 'qué vamos a construir'. Tipos de artefacto, atributos, módulos." },
+    notes:`🎙️ DECIR: «Conectamos lo que quiere el negocio con lo que vamos a construir: tipos de artefacto, atributos, módulos estructurados.»
+
+TIP: Un requisito no es un párrafo suelto: es un objeto con identidad (ID), tipo y estado.
+Lo practicaréis en los módulos 2 y 4.
+Transición: «Y lo más potente: conectarlo todo…»` },
 
   { img:"12-trazabilidad-triangulo.png", kicker:"Beneficio 3", kclass:"ok",
     title:"Trazabilidad extremo a extremo",
     lead:"Del requisito de negocio al diseño, las pruebas y los cambios: todo enlazado.",
-    notes:"El corazón del valor. Análisis de impacto en segundos: si cambio esto, ¿a qué afecta y qué pruebas repito?" },
+    notes:`🎙️ DECIR: «Trazabilidad de punta a punta: del requisito de negocio al diseño, a la prueba, al cambio. Si algo se mueve, tiro del hilo y veo el impacto.»
+
+TIP: Este es el CORAZÓN del valor de DOORS. Análisis de impacto en segundos, no en semanas de Excel.
+En el curso lo veréis en el módulo 5.
+Transición: «Así se ve en la práctica…»` },
 
   { img:"15-trazabilidad-arbol.png", kicker:"Beneficio 3", kclass:"ok",
     title:"Enlaces entre artefactos",
     lead:"Relaciones explícitas que muestran cobertura, dependencias y huecos.",
-    notes:"Matrices y vistas de trazabilidad. Demuestra cobertura (¿todo requisito tiene prueba?) de un vistazo." },
+    notes:`🎙️ DECIR: «Enlaces tipados entre artefactos: "satisface", "deriva de", "valida". Matrices de trazabilidad que muestran huecos: requisitos sin prueba, pruebas huérfanas.»
+
+TIP: Cobertura = ¿cada requisito tiene su prueba? Los huecos son alarmas, no detalles.
+Transición: «Y todo eso queda registrado…»` },
 
   { img:"17-edicion-versionado.png", kicker:"Beneficio 4", kclass:"ok",
     title:"Edición colaborativa y versionado",
     lead:"Histórico de cambios, versiones y líneas base automáticas. Quién, qué y cuándo.",
-    notes:"Auditoría y control de cambios sin esfuerzo. Líneas base para congelar el alcance de una entrega." },
+    notes:`🎙️ DECIR: «Quién cambió qué y cuándo, sin preguntar por el correo. Líneas base para congelar una entrega: "esto es la versión 1, punto".»
+
+TIP: Auditoría y control de cambios sin montar procesos a mano. Módulo 6 del curso.
+Transición: «Y para gestión e informes…»` },
 
   { img:"16-dashboards.png", kicker:"Beneficio 5", kclass:"ok",
     title:"Dashboards e informes en vivo",
     lead:"Métricas y estado del proyecto siempre actualizados, sin montar Excels a mano.",
-    notes:"Visibilidad para gestión: estado, progreso, calidad de requisitos. Decisiones basadas en datos." },
+    notes:`🎙️ DECIR: «Dashboards e informes que se actualizan solos: estado, progreso, calidad. Decisiones con datos, no con Excels de la semana pasada.»
+
+TIP: Lo que ves es lo que exportas (módulo 7). Vistas personalizables por rol: cliente, auditor, equipo.
+Transición: «Resumamos.»` },
 
   { img:"18-bombilla.png", cover:true, kclass:"ok",
     title:"¿Por qué lo usamos?",
     tagline:"Menos riesgo · Mejor calidad · Decisiones con datos",
     meta:"DOORS Next convierte el caos de los requisitos en un proceso controlado, trazable y colaborativo.",
-    notes:"Cierre. Resumen en una frase: gestionamos requisitos como un activo, no como documentos sueltos. Transición: 'y ahora vamos a verlo en directo'." },
+    notes:`🎙️ DECIR: «Resumen en una frase: gestionamos requisitos como un activo del proyecto, no como documentos sueltos. Menos riesgo, mejor calidad, decisiones con datos.»
+
+TIP: CIERRE + TRANSICIÓN AL CURSO: «Y ahora lo vamos a ver en directo: cada uno con su entorno, login alumno/alumno, y empezamos.»
+Pregunta final opcional: «¿Alguna duda antes de entrar a la herramienta?»
+Pulsa F (pantalla completa off) y pasad al M01.` },
 ];
 
 const deck = document.getElementById('deck');
