@@ -51,7 +51,8 @@ Necesitas los secretos `DOCKERHUB_USER` y `DOCKERHUB_TOKEN` ya configurados en
 **VS Code de escritorio** o **`gh`**.
 
 1. Haz **fork** de este repositorio.
-2. **Code → Codespaces → Create codespace** (máquina **4 núcleos / 16 GB**).
+2. **Code → Codespaces → Create codespace** (acepta la máquina por defecto; si
+   DOORS va lento, sube a **4 núcleos / 16 GB** en la configuración del codespace).
 3. En la terminal del Codespace:
    ```bash
    bash infra/up.sh
@@ -69,6 +70,11 @@ Necesitas los secretos `DOCKERHUB_USER` y `DOCKERHUB_TOKEN` ya configurados en
      terminal abierta).
 
    > **No** abras la URL `*.app.github.dev`: por ahí el inicio de sesión no funciona.
+
+   > [!TIP]
+   > Si al crear el codespace ves *«no machine types are available»*, sincroniza tu fork
+   > con `main` del repositorio del curso (versión antigua exigía 4 núcleos / 16 GB fijos).
+   > Tras actualizar, el desplegable de máquina debería ofrecer al menos la opción por defecto.
 
 ---
 

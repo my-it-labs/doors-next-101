@@ -5,11 +5,6 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/sshd:1": {}
   },
-  "hostRequirements": {
-    "cpus": 4,
-    "memory": "16gb",
-    "storage": "32gb"
-  },
   "forwardPorts": [9443, 9080, 8025],
   "portsAttributes": {
     "9443": { "label": "DOORS Next (HTTPS)", "protocol": "https", "onAutoForward": "silent" },

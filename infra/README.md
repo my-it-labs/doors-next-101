@@ -74,7 +74,8 @@ vez, varios GB). Está listo cuando en el log aparece `Application rm started`.
 escritorio **o** GitHub CLI — ver tabla por SO más abajo).
 
 1. Haz **fork** del repositorio.
-2. **Code → Codespaces → Create codespace** sobre tu fork (máquina **4 núcleos / 16 GB**).
+2. **Code → Codespaces → Create codespace** sobre tu fork (máquina por defecto;
+   opcional **4 núcleos / 16 GB** si DOORS va lento).
 3. En la terminal del Codespace:
    ```bash
    bash infra/up.sh
